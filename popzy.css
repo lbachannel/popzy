@@ -1,0 +1,67 @@
+.popzy__backdrop {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+.popzy--show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popzy__container {
+    position: relative;
+    background: #fff;
+    width: min(600px, 90%);
+    padding: 30px 30px 0 30px;
+    transform: scale(0);
+    transition: transform 0.25s;
+}
+
+.popzy--show .popzy__container {
+    transform: scale(1);
+}
+
+.popzy__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    font-size: 2rem;
+    background: #f6f4f4;
+    color: #8a8787;
+    border-radius: 50%;
+}
+
+.popzy__close:hover {
+    color: #333;
+}
+
+.popzy__content {
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-right: -20px;
+    padding-right: 20px;
+}
+
+.popzy__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.popzy__btn--pull-left {
+    margin-right: auto;
+}
+
+.popzy--no-scroll {
+    overflow: hidden;
+}
