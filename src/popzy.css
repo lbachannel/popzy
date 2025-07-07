@@ -47,8 +47,9 @@
 .popzy__content {
     max-height: 80vh;
     overflow-y: auto;
-    margin-right: -20px;
-    padding-right: 20px;
+    margin-right: -5px;
+    padding-right: 5px;
+    margin-top: 25px;
 }
 
 .popzy__footer {
