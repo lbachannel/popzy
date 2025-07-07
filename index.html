@@ -7,6 +7,7 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.0/popzy.min.js">
 
     <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
@@ -407,9 +408,30 @@ modal.close();</code></pre>
         <script>
             load('#footer', './templates/footer.html');
         </script>
+        
     </div>
     <!-- End Container -->
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.0/popzy.min.js"></script>
+    <script>
+        // Basic modal
+        const basicModalBtn = document.querySelector('.js-popzy-modal-1');
+        const basicModal = new Popzy({
+            content: `
+                <h1>Basic modal</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Soluta nulla, perferendis consequuntur earum veniam dolorum tempora 
+                    quas similique. Modi quibusdam fuga fugit culpa voluptatem dicta inventore 
+                    laudantium id quae quas.
+                </p>
+            `
+        });
+
+        basicModalBtn.onclick = function() {
+            basicModal.open();
+        }
+    </script>
 </body>
 </html>
