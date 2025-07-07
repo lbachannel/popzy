@@ -1259,19 +1259,30 @@ b, strong {
   color: #666;
 }
 
-code[class*=language-],
-pre[class*=language-] {
-  background: #f6f8fa !important;
-}
-
-:not(pre) > code[class*=language-] {
-  background: #e5e5e5 !important;
-}
-
 .container {
   margin-right: auto;
   margin-left: auto;
   max-width: 100rem;
+}
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 90rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 75rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 55rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 45rem;
+  }
 }
 
 .content {
@@ -1367,6 +1378,11 @@ blockquote {
   font-size: 1em;
   line-height: 1.65em;
 }
+@media (max-width: 575.98px) {
+  .btn {
+    width: 100%;
+  }
+}
 .btn-demo {
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -1384,6 +1400,24 @@ blockquote {
 .heading-1 {
   font-size: 2rem;
   font-weight: 700;
+}
+
+code[class*=language-],
+pre[class*=language-] {
+  background: #f6f8fa !important;
+}
+
+code {
+  font-size: 1.5rem !important;
+  word-wrap: break-word !important;
+}
+
+code, pre, samp {
+  white-space: pre-wrap !important;
+}
+
+:not(pre) > code[class*=language-] {
+  background: #e5e5e5 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

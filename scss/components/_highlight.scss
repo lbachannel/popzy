@@ -1,0 +1,17 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    background: #f6f8fa !important;
+}
+
+code {
+    font-size: 1.5rem !important;
+    word-wrap: break-word !important;
+}
+
+code, pre, samp {
+    white-space: pre-wrap !important;
+}
+
+:not(pre)>code[class*=language-] {
+    background: #e5e5e5 !important;
+}

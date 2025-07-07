@@ -1,16 +1,25 @@
-code[class*="language-"],
-pre[class*="language-"] {
-    background: #f6f8fa !important;
-}
-
-:not(pre)>code[class*=language-] {
-    background: #e5e5e5 !important;
-}
+@use "../abstracts";
 
 .container {
     margin-right: auto;
     margin-left: auto;
     max-width: 100rem;
+
+    @include abstracts.screen(xl) {
+        max-width: 90rem;
+    }
+
+    @include abstracts.screen(lg) {
+        max-width: 75rem;
+    }
+
+    @include abstracts.screen(md) {
+        max-width: 55rem;
+    }
+
+    @include abstracts.screen(sm) {
+        max-width: 45rem;
+    }
 }
 
 .content {
