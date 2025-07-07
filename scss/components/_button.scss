@@ -1,0 +1,28 @@
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    border: 0;
+    border: 2px solid var(--gradient-to);
+    border-radius: 4px;
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1.65em;
+
+    &-demo {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.modal-btn {
+    padding: 8px 20px;
+    color: #fff;
+    background: #34495e;
+
+    &--primary {
+        background: var(--gradient-to);
+    }
+}

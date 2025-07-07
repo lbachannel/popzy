@@ -7,7 +7,7 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.1/popzy.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.1/popzy.min.css">
 
     <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
@@ -419,7 +419,7 @@ modal.close();</code></pre>
         const basicModalBtn = document.querySelector('.js-popzy-modal-1');
         const basicModal = new Popzy({
             content: `
-                <h1>Basic modal</h1>
+                <h1 class="heading-1">Basic modal</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Soluta nulla, perferendis consequuntur earum veniam dolorum tempora 
@@ -431,6 +431,27 @@ modal.close();</code></pre>
 
         basicModalBtn.onclick = function() {
             basicModal.open();
+        }
+
+        // Modal with button
+        const buttonWithModalBtn = document.querySelector('.js-popzy-modal-2');
+        const buttonModal = new Popzy({
+            content: `
+                <h1 class="heading-1">Modal with buttons</h1>
+                <p>
+                    This modal includes functional buttons for actions such as canceling or confirming.
+                </p>
+            `,
+            footer: true
+        })
+        buttonModal.addFooterButton('Cancel', 'modal-btn btn-demo', function(e) {
+            buttonModal.close();
+        });
+        buttonModal.addFooterButton('Confirm', 'modal-btn btn-demo modal-btn--primary', function(e) {
+            buttonModal.close();
+        })
+        buttonWithModalBtn.onclick = function() {
+            buttonModal.open();
         }
     </script>
 </body>

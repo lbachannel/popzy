@@ -1325,28 +1325,6 @@ a:visited {
   text-decoration: underline;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5em 1.5em;
-  outline: 0;
-  border: 0;
-  border: 2px solid var(--gradient-to);
-  border-radius: 4px;
-  background: none;
-  box-shadow: none;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
-  line-height: 1.65em;
-  cursor: pointer;
-}
-
-.btn-demo {
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-}
-
 .w60 {
   width: 60%;
 }
@@ -1374,6 +1352,38 @@ blockquote {
   border-left: 3px solid var(--gradient-to);
   opacity: 0.8;
   font-style: italic;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border: 0;
+  border: 2px solid var(--gradient-to);
+  border-radius: 4px;
+  box-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.65em;
+}
+.btn-demo {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-btn {
+  padding: 8px 20px;
+  color: #fff;
+  background: #34495e;
+}
+.modal-btn--primary {
+  background: var(--gradient-to);
+}
+
+.heading-1 {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=main.css.map */
