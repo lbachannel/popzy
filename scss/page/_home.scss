@@ -14,11 +14,12 @@
     }
 
     @include abstracts.screen(md) {
-        max-width: 55rem;
+        background: yellow;
+        max-width: 56rem;
     }
 
     @include abstracts.screen(sm) {
-        max-width: 30rem;
+        max-width: 45rem;
     }
 }
 

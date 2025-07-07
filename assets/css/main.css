@@ -1276,12 +1276,13 @@ b, strong {
 }
 @media (max-width: 767.98px) {
   .container {
-    max-width: 55rem;
+    background: yellow;
+    max-width: 56rem;
   }
 }
 @media (max-width: 575.98px) {
   .container {
-    max-width: 30rem;
+    max-width: 45rem;
   }
 }
 
