@@ -21,6 +21,8 @@ function Popzy(options = {}) {
         closeMethods: ['button', 'overlay', 'escape'],
         cssClass: [],
         footer: false,
+        enableScrollLock: true,
+        scrollLockTarget: () => document.body,
     }, options);
 
     this._footerButtons = [];
@@ -50,8 +52,8 @@ Popzy.prototype._renderFooterContent = function() {
     }
 }
 
-Popzy.prototype.setFooterContent = function(html) {
-    this._footerContent = html;
+Popzy.prototype.setFooterContent = function(content) {
+    this._footerContent = content;
     this._renderFooterContent();
 }
 
@@ -78,7 +80,7 @@ Popzy.prototype._build = function() {
 
     // create modal elements
     this._backdrop = document.createElement('div');
-    this._backdrop.className = 'popzy__backdrop';
+    this._backdrop.className = 'popzy';
 
     const container = document.createElement('div');
     container.className = 'popzy__container';
@@ -128,11 +130,11 @@ Popzy.prototype._getScrollWidth = function() {
     Object.assign(div.style, {
         overflow: 'scroll',
         position: 'absolute',
-        top: '-99px'
+        top: '-9999px'
     });
 
     document.body.append(div);
-    this._scrollWidth - div.offsetWidth - div.clientWidth;
+    this._scrollWidth = div.offsetWidth - div.clientWidth;
     document.body.removeChild(div);
     return this._scrollWidth;
 };
@@ -167,8 +169,15 @@ Popzy.prototype.open = function() {
     }, 0);
 
     // disable scrolling
-    document.body.classList.add('popzy--no-scroll');
-    document.body.style.paddingRight = this._getScrollWidth() + 'px';
+    if (this.opt.enableScrollLock) {
+        const target = this.opt.scrollLockTarget();
+        
+        if (this._hasScrollBar(target)) {
+            const targetPadRight = parseFloat(getComputedStyle(target).paddingRight);
+            target.classList.add('popzy--no-scroll');
+            target.style.paddingRight = targetPadRight + this._getScrollWidth() + 'px';
+        }
+    }
 
     // attack event listener
     if (this._allowBackdropClose) {
@@ -201,10 +210,13 @@ Popzy.prototype.close = function(destroy = this.opt.destroyOnClose) {
             this._modalFooter = null;
         };
 
-        if (!Popzy.elements.length) {
+        if (this.opt.enableScrollLock && !Popzy.elements.length) {
             // enable scrolling
-            document.body.classList.remove('popzy--no-scroll');
-            document.body.style.paddingRight = "";
+            const target = this.opt.scrollLockTarget();
+            if (this._hasScrollBar(target)) {
+                target.classList.remove('popzy--no-scroll');
+                target.style.paddingRight = "";
+            }
         }
 
         if (typeof this.opt.onClose === 'function') {
@@ -222,4 +234,11 @@ Popzy.prototype.setContent = function(content) {
     if (this._modalContent) {
         this._modalContent.innerHTML = this.content;
     }
+}
+
+Popzy.prototype._hasScrollBar = (target) => {
+    if ([document.documentElement, document.body].includes(target)) {
+        return document.documentElement.scrollHeight > document.documentElement.clientHeight || document.body.scrollHeight > document.body.clientHeight;
+    }
+    return target.scrollHeight > target.clientHeight;
 }
