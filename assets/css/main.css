@@ -1281,7 +1281,7 @@ b, strong {
 }
 @media (max-width: 575.98px) {
   .container {
-    max-width: 45rem;
+    max-width: 30rem;
   }
 }
 
