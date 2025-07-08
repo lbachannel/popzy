@@ -2,6 +2,8 @@
     display: table;
     width: 100%;
     table-layout: fixed;
+    word-wrap: break-word;
+    // hyphens: auto;
 
     & tr:nth-child(odd) {
         background-color: #f9f9f9;
