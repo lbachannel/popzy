@@ -94,7 +94,7 @@ Popzy.prototype._build = function() {
     // attack event listener
     if (this._allowButtonClose) {
         const buttonClose = this._createButton(
-            '&times',
+            '&times;',
             'popzy__close',
             () => this.close()
         );
@@ -169,7 +169,7 @@ Popzy.prototype.open = function() {
     }, 0);
 
     // disable scrolling
-    if (this.opt.enableScrollLock) {
+    if (Popzy.elements.length === 1 && this.opt.enableScrollLock) {
         const target = this.opt.scrollLockTarget();
         
         if (this._hasScrollBar(target)) {
