@@ -534,6 +534,17 @@ modal.close();</code></pre>
         multiModalBtn.onclick = function() {
             multiModal.open();
         }
+        
+        // Youtube Embed modal
+        const ytbModalBtn = document.querySelector('.js-popzy-modal-7');
+        const ytbModal = new Popzy({
+            content: `
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9QzXfnDLhVQ?si=ECrPq-yjDdGJvs0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            `
+        });
+        ytbModalBtn.onclick = function() {
+            ytbModal.open();
+        }
     </script>
 </body>
 </html>
