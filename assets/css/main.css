@@ -1398,6 +1398,10 @@ blockquote {
   background: var(--gradient-to);
 }
 
+.nonemr {
+  margin-right: 0;
+}
+
 .heading-1 {
   font-size: 2rem;
   font-weight: 700;
