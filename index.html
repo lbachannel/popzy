@@ -489,6 +489,23 @@ modal.close();</code></pre>
         largeContentModalBtn.onclick =  function() {
             largeContentModal.open();
         }
+
+        // Footer only close button modal
+        const footerOnlyModalBtn = document.querySelector('.js-popzy-modal-4');
+        const footerOnlyModal = new Popzy({
+            content: `
+                <h1 class="heading-1">Footer only close button modal</h1>
+                <p>This modal can only be closed via the button in the footer for a controlled experience.</p>
+            `,
+            footer: true,
+            closeMethods: []
+        });
+        footerOnlyModal.addFooterButton("Close", "modal-btn", () => {
+            footerOnlyModal.close();
+        });
+        footerOnlyModalBtn.onclick = function() {
+            footerOnlyModal.open();
+        }
     </script>
 </body>
 </html>
