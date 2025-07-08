@@ -30,13 +30,15 @@
 
 .popzy__close {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 25px;
-    height: 25px;
-    font-size: 1.8rem;
-    background: #f6f4f4;
-    color: #8a8787;
+    display: flex;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+    color: #666;
+    background: #ebebeb;
     border-radius: 50%;
 }
 
