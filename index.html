@@ -7,7 +7,7 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.3/popzy.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.4/popzy.min.css">
 
     <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
@@ -109,13 +109,13 @@
 
         <pre
             class="language-javascript"
-        ><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.3/popzy.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        ><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.4/popzy.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 
         <p>Optionally, include the Popzy CSS file for default styling:</p>
 
         <pre class="language-javascript"><code>&lt;link
     rel=&quot;stylesheet&quot;
-    href=&quot;https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.3/popzy.min.css&quot;
+    href=&quot;https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.4/popzy.min.css&quot;
 &gt;</code></pre>
 
         <p>
@@ -423,7 +423,7 @@ modal.close();</code></pre>
     <!-- End Container -->
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.3/popzy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/lbachannel/popzy@v1.0.4/popzy.min.js"></script>
     <script>
         // Basic modal
         const basicModalBtn = document.querySelector('.js-popzy-modal-1');
@@ -505,6 +505,34 @@ modal.close();</code></pre>
         });
         footerOnlyModalBtn.onclick = function() {
             footerOnlyModal.open();
+        }
+        
+        // Persistent modal
+        const persistentModalBtn = document.querySelector('.js-popzy-modal-5');
+        const persistentModal = new Popzy({
+            content: `
+                <h1 class="heading-1">Persistent modal</h1>
+                <p>This modal stays in the DOM even after being closed, allowing you to reopen it without losing any changes.</p>
+                <p>You can write something in the input below, close the modal, and reopen it to see the content still intact.</p>
+                <input type="text" placeholder="Type something here..." class="modal-input" style="width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc" />
+            `,
+            destroyOnClose: false,
+        });
+        persistentModalBtn.onclick = function() {
+            persistentModal.open();
+        }
+
+        // Multiple modals
+        const multiModalBtn = document.querySelector('.js-popzy-modal-6');
+        const multiModal = new Popzy({
+            content: `
+                <h1 class="heading-1">Multiple Modals</h1>
+                <p>This modal demonstrates interaction between multiple modals. You can open another modal from here.</p>
+                <button class="btn" onclick="basicModal.open();">Open Basic Modal</button>
+            `,
+        });
+        multiModalBtn.onclick = function() {
+            multiModal.open();
         }
     </script>
 </body>
