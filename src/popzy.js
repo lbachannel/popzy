@@ -123,7 +123,7 @@ Popzy.prototype._build = function() {
 };
 
 Popzy.prototype._getScrollWidth = function() {
-    if (this.scrollWidth) {
+    if (this._scrollWidth) {
         return this._scrollWidth;
     }
     const div = document.createElement('div');
